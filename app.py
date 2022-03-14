@@ -1,6 +1,6 @@
 from flask import Flask, session, g
 import config
-from exts import db,mail
+from exts import db, mail
 from blueprints import qa_bp
 from blueprints import user_bp
 from flask_migrate import Migrate
@@ -16,6 +16,7 @@ migrate = Migrate(app, db)
 
 app.register_blueprint(qa_bp)
 app.register_blueprint(user_bp)
+
 
 @app.before_request
 def before_request():
